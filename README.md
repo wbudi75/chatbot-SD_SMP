@@ -20,15 +20,8 @@ yang dirancang untuk membantu anak **SD hingga SMP** memahami konsep sains, tekn
 ---
 
 ## 🧱 Struktur Project
-chatbot-SD_SMP/
-├── app.py
-├── templates/
-│ └── index.html
-├── static/
-│ └── style.css
-├── pyproject.toml
-├── .gitignore
-└── .env
+<img width="188" height="243" alt="struktur" src="https://github.com/user-attachments/assets/1d692c35-3caf-4fdb-9e8d-5373e2c3ed58" />
+
 
 
 ---
