@@ -78,6 +78,8 @@ Awan terbentuk saat uap air di udara naik ke atmosfer dan mendingin hingga menga
 Proyek ini dirilis di bawah lisensi MIT — bebas digunakan dan dimodifikasi untuk keperluan edukatif dan non-komersial.
 
 ###Kontributor
-Dibuat oleh: Wahyu Budi
+
+Wahyu Budi
+
 📫 Email: wbudi75@gmail.com
 
