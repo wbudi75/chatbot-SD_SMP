@@ -35,7 +35,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## Buat  environment project
 cd chatbot-SD_SMP
+
 uv init
+
 uv add flask google-genai python-dotenv
 
 ## Buat file .env
