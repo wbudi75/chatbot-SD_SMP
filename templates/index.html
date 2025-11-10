@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Gemini Kids Chatbot 🤖</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="theme-sd">
+  <div class="theme-toggle">
+    <button id="themeButton">🎨 Ganti Tema: SD</button>
+  </div>
+
+  <div class="container">
+    <h1>🤖 Gemini Kids Chatbot</h1>
+
+    <form method="POST" id="chatForm">
+      <!-- Tema aktif dikirim ke backend -->
+      <input type="hidden" name="theme" id="themeInput" value="{{ theme or 'SD' }}">
+      <textarea name="question" placeholder="Tulis pertanyaan kamu di sini..." required></textarea><br><br>
+      <button type="submit">Tanya Sekarang</button>
+    </form>
+
+    {% if answer %}
+    <div class="answer">
+      <h3>🧠 Jawaban:</h3>
+      <p>{{ answer | replace('\n', '<br>') | safe }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <script>
+    // --- Tema toggle ---
+    const body = document.body;
+    const themeBtn = document.getElementById("themeButton");
+    const themeInput = document.getElementById("themeInput");
+
+    // Ambil tema terakhir dari localStorage
+    const savedTheme = localStorage.getItem("themeMode");
+
+    // Terapkan tema
+    const applyTheme = (theme) => {
+      body.className = theme;
+      if (theme === "theme-sd") {
+        themeBtn.textContent = "🎨 Ganti Tema: SD";
+        themeInput.value = "SD";
+      } else {
+        themeBtn.textContent = "🎨 Ganti Tema: SMP";
+        themeInput.value = "SMP";
+      }
+      localStorage.setItem("themeMode", theme);
+    };
+
+    // Jika ada tema tersimpan, pakai itu. Kalau tidak, default SD
+    applyTheme(savedTheme || "theme-sd");
+
+    // Saat tombol tema diklik
+    themeBtn.addEventListener("click", () => {
+      if (body.classList.contains("theme-sd")) {
+        applyTheme("theme-smp");
+      } else {
+        applyTheme("theme-sd");
+      }
+    });
+  </script>
+</body>
+</html>
